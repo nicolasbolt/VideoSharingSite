@@ -1,0 +1,13 @@
+{% extends 'mainapp/base.html' %}
+{% block content %}
+<div class="row">
+	{% for video in videos %}
+	<div class="col-md-4 mt-2 text-center">
+		<a href="{% url 'video-detail' video.id %}"><img src="{{ video.thumbnail.url }}" alt_text="Thumbnail"></img></a>
+		<a href="{% url 'video-detail' video.id %}"><p class="pt-2 text-secondary nounderline"><strong>{{ video.title }}</strong></p></a>
+		<p class="text-muted">{{ video.author }}</p>
+	</div>
+	{% endfor %}
+	</div>
+</div>
+{% endblock content %}
